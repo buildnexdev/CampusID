@@ -4,7 +4,7 @@ import studentRoutes from './routes/studentRoutes.js';
 
 const app = express();
 
-app.use(cors({ origin: process.env.CORS_ORIGIN ?? 'http://localhost:5173' }));
+app.use(cors());
 app.use(express.json());
 
 app.get('/api/health', (_req, res) => {
