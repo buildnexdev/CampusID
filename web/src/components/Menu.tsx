@@ -4,18 +4,21 @@ export default function Menu() {
     const navigate = useNavigate();
     const location = useLocation();
 
+    // Dynamically get the active student ID from pathname if on a student profile page
+    const pathParts = location.pathname.split('/');
+    const isStudentProfilePage = pathParts[1] === 'students' && pathParts[2] && pathParts[2] !== '';
+    const activeStudentId = isStudentProfilePage ? pathParts[2] : 'STU001';
+
     const handleItemClick = (path: string, hash?: string) => {
         if (hash) {
-            const isStudentPage = location.pathname.startsWith('/students');
-            if (isStudentPage) {
+            if (isStudentProfilePage) {
                 const element = document.getElementById(hash);
                 if (element) {
                     element.scrollIntoView({ behavior: 'smooth' });
                     window.history.pushState(null, '', `#${hash}`);
                 }
             } else {
-                // Navigate to default student STU001 and set hash
-                navigate(`/students/STU001#${hash}`);
+                navigate(`/students/${activeStudentId}#${hash}`);
             }
         } else {
             navigate(path);
@@ -23,20 +26,6 @@ export default function Menu() {
     };
 
     const menuItems = [
-        // {
-        //   id: 'dashboard',
-        //   label: 'Dashboard',
-        //   path: '/',
-        //   isActive: location.pathname === '/',
-        //   icon: (
-        //     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        //       <rect x="3" y="3" width="7" height="9" />
-        //       <rect x="14" y="3" width="7" height="5" />
-        //       <rect x="14" y="12" width="7" height="9" />
-        //       <rect x="3" y="16" width="7" height="5" />
-        //     </svg>
-        //   ),
-        // },
         {
             id: 'scanner',
             label: 'Barcode Scanner',
@@ -50,42 +39,43 @@ export default function Menu() {
             ),
         },
         {
+            id: 'directory',
+            label: 'Student Directory',
+            path: '/students',
+            isActive: location.pathname === '/students',
+            icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+            ),
+        },
+        {
+            id: 'add-student',
+            label: 'Add Student',
+            path: '/add-student',
+            isActive: location.pathname === '/add-student',
+            icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <line x1="19" y1="8" x2="19" y2="14" />
+                    <line x1="16" y1="11" x2="22" y2="11" />
+                </svg>
+            ),
+        },
+        {
             id: 'student-details',
             label: 'Student Details',
-            path: '/students/STU001',
+            path: `/students/${activeStudentId}`,
             hash: 'student-details',
-            isActive: location.pathname.startsWith('/students') && (location.hash === '#student-details' || !location.hash),
+            isActive: isStudentProfilePage && (location.hash === '#student-details' || !location.hash),
             icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                     <circle cx="12" cy="7" r="4" />
-                </svg>
-            ),
-        },
-        {
-            id: 'achievements',
-            label: 'Achievements',
-            path: '/students/STU001',
-            hash: 'achievements',
-            isActive: location.pathname.startsWith('/students') && location.hash === '#achievements',
-            icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="8" r="7" />
-                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
-                </svg>
-            ),
-        },
-        {
-            id: 'sports',
-            label: 'Sports Achievements',
-            path: '/students/STU001',
-            hash: 'sports',
-            isActive: location.pathname.startsWith('/students') && location.hash === '#sports',
-            icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M6 12A6 6 0 0 1 12 6" />
-                    <path d="M12 18A6 6 0 0 1 18 12" />
                 </svg>
             ),
         },
