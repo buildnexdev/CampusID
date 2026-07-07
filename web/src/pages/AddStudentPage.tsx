@@ -135,7 +135,7 @@ export default function AddStudentPage() {
               type="email"
               id="email"
               name="email"
-              placeholder="e.g. rohit.kumar@kye.edu"
+              placeholder="e.g. rohit.kumar@buildnex.edu"
               value={formData.email}
               onChange={handleChange}
               style={{ padding: '0.75rem', border: '1px solid var(--border)', borderRadius: '8px', fontSize: '1rem', width: '100%' }}

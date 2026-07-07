@@ -4,7 +4,7 @@ export default function HomePage() {
   return (
     <div className="page home-page">
       <section className="hero">
-        <p className="eyebrow">KYE HR Portal</p>
+        <p className="eyebrow">BuildnexHr Portal</p>
         <h1>Student Management & Activity Tracking</h1>
         <p className="hero-text">
           Scan student ID cards to instantly view profiles, attendance, achievements,

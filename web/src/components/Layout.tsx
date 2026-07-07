@@ -6,8 +6,8 @@ export default function Layout() {
     <div className="app-shell" style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
       <header className="app-header-full">
         <Link to="/" className="brand" style={{ color: 'white' }}>
-          <span className="brand-mark" style={{ backgroundColor: 'white', color: '#4451c3' }}>KYE</span>
-          <span className="brand-text" style={{ color: 'white', fontWeight: 'bold' }}>HR Portal</span>
+          <span className="brand-mark" style={{ backgroundColor: 'white', color: '#4451c3' }}>Buildnex</span>
+          <span className="brand-text" style={{ color: 'white', fontWeight: 'bold' }}>Hr Portal</span>
         </Link>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <Link to="/profile" style={{ marginRight: 20 }} className="brand">
@@ -36,7 +36,7 @@ export default function Layout() {
         <aside className="app-sidebar">
           <Menu />
           <div className="sidebar-footer">
-            <div style={{ whiteSpace: 'nowrap' }}>KYE HR - Student Management System</div>
+            <div style={{ whiteSpace: 'nowrap' }}>BuildnexHr - Student Management System</div>
             <div style={{ opacity: 0.6, marginTop: 4 }}>Version: 1.0.0</div>
             <div style={{ opacity: 0.6 }}>Date: 17-Jun-2026</div>
           </div>

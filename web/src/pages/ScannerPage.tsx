@@ -39,8 +39,8 @@ export default function ScannerPage() {
 
       <div className="demo-hint">
         <p>Demo barcodes for testing:</p>
-        <code>KYE-STU-2024-001</code>
-        <code>KYE-STU-2024-002</code>
+        <code>BUILDNEX-STU-2024-001</code>
+        <code>BUILDNEX-STU-2024-002</code>
       </div>
     </div>
   );
