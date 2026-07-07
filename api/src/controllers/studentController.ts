@@ -53,7 +53,7 @@ export function createStudent(req: Request, res: Response): void {
 
   const nextNum = mockStudents.length + 1;
   const id = `STU${String(nextNum).padStart(3, '0')}`;
-  const barcodeId = `KYE-STU-2026-${String(nextNum).padStart(3, '0')}`;
+  const barcodeId = `BUILDNEX-STU-2026-${String(nextNum).padStart(3, '0')}`;
 
   const newStudent: Student = {
     id,

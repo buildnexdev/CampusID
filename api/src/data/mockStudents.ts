@@ -3,12 +3,12 @@ import type { Student } from '../types/student.js';
 export const mockStudents: Student[] = [
   {
     id: 'STU001',
-    barcodeId: 'KYE-STU-2024-001',
+    barcodeId: 'BUILDNEX-STU-2024-001',
     rollNo: 'CS21001',
     name: 'Arjun Mehta',
     department: 'Computer Science',
     year: '3rd Year',
-    email: 'arjun.mehta@kye.edu',
+    email: 'arjun.mehta@buildnex.edu',
     phone: '+91 98765 43210',
     photoUrl: '',
     activityRecords: {
@@ -30,7 +30,7 @@ export const mockStudents: Student[] = [
       educationalAchievements: [
         {
           title: 'Hackathon Winner',
-          description: 'First place at KYE Tech Fest 2024',
+          description: 'First place at Buildnex Tech Fest 2024',
           date: '2024-02-10',
           level: 'College',
         },
@@ -67,7 +67,7 @@ export const mockStudents: Student[] = [
       academicActivities: [
         {
           title: 'Research Paper Presentation',
-          description: 'Presented on ML in Healthcare at KYE Symposium',
+          description: 'Presented on ML in Healthcare at Buildnex Symposium',
           date: '2024-01-18',
         },
         {
@@ -93,12 +93,12 @@ export const mockStudents: Student[] = [
   },
   {
     id: 'STU002',
-    barcodeId: 'KYE-STU-2024-002',
+    barcodeId: 'BUILDNEX-STU-2024-002',
     rollNo: 'ME21045',
     name: 'Priya Sharma',
     department: 'Mechanical Engineering',
     year: '2nd Year',
-    email: 'priya.sharma@kye.edu',
+    email: 'priya.sharma@buildnex.edu',
     phone: '+91 91234 56789',
     activityRecords: {
       attendancePercentage: 92.3,

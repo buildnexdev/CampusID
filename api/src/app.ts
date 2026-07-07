@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/api/health', (_req, res) => {
-  res.json({ status: 'ok', service: 'KYE HR API' });
+  res.json({ status: 'ok', service: 'BuildnexHr API' });
 });
 
 app.use('/api/students', studentRoutes);
